@@ -11,6 +11,7 @@ interface urlParam {
 export class Page {
     data: Buffer;
     headers;
+    dataChunks = [];
     location : urlParam = {hostname : '', path : ''};
 
     constructor(url: string) {
@@ -44,7 +45,12 @@ export class Page {
                 } else {
 
                     res.on('data', d => {
-                        this.data = d;
+                        this.dataChunks.push(d);
+                        console.log('# data');
+                    });
+
+                    res.on('end', () => {
+                        this.data = Buffer.concat(this.dataChunks);
                         resolve(true);
                     });
                 }
