@@ -14,11 +14,11 @@ let t = `<html>
     <h1>Ez cim</h1><b> ez felkover</b>
     Ez szoveg.
     <div>
-        masodik kis ablak
+        masodik kis ablak<i></i>
     </div>
 </div>
 
-</html>`
+</html><baaa!!>xx`
 
 // let t = `naja  <html> hahha </html><bu></dda>aaghh</da> naaa`
 // let t = `hahha </html> naaa`
