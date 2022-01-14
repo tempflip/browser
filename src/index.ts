@@ -1,9 +1,30 @@
 import { Page } from './Page'
+import { Parser } from './Parser';
 
-let p: Page = new Page('https://wikipedia.org/');
+// let p: Page = new Page('https://wikipedia.org/');
 
-p.download().then(() => {
-    console.log('Success!');
-    // console.log(p.headers);
-    console.log(p.asText);
-});
+// p.download().then(() => {
+//     console.log('Success!');
+//     console.log(p.asText);
+// });
+
+
+let t = `<html>
+<div>
+    <h1>Ez cim</h1><b> ez felkover</b>
+    Ez szoveg.
+    <div>
+        masodik kis ablak
+    </div>
+</div>
+
+</html>`
+
+// let t = `naja  <html> hahha </html><bu></dda>aaghh</da> naaa`
+// let t = `hahha </html> naaa`
+
+
+
+let pa = new Parser(t);
+pa.parse();
+console.log(pa.elements);
