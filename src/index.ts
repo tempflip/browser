@@ -5,6 +5,12 @@ const process = require('process');
 process.stdin.on('data', d => {
     let pa = new Parser(d.toString());
     pa.parse();
-    // console.log(pa.elements);
+    pa.buildTree();
+    // console.log(JSON.stringify(pa.elements, null, 2));
+
+
     // console.log(pa.DOM);
+
+    console.log(JSON.stringify(pa.DOM, null, 2));
+
 });
